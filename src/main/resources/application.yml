@@ -1,0 +1,26 @@
+#生产环境
+server:
+  servlet:
+    path: /api/v1
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://cdb-2d1zll67.gz.tencentcdb.com:10025/app?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: ENC(ZZBBroSIlaRn+PQ7Nf35Y/AmzwLQPMbi)
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  servlet:
+      multipart:
+        enabled: true
+        max-file-size: 100MB
+        max-request-size: 100MB
+jasypt:
+  encryptor:
+    #这里可以理解成是加解密的时候使用的密钥
+    password: gycrypto
